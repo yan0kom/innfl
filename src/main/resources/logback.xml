@@ -1,0 +1,15 @@
+<configuration>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} %-5level %logger: %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="ru.yan0kom" level="debug" />
+  <logger name="org.springframework.web" level="debug" />
+  <logger name="org.springframework.ws.client.MessageTracing.sent" level="trace" />
+
+  <root level="info">
+    <appender-ref ref="STDOUT"/>
+  </root>
+</configuration>

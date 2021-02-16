@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:smev="http://smev.gosuslugi.ru/rev111111" xmlns:tns="http://ws.unisoft/" targetNamespace="http://ws.unisoft/">
+	<wsdl:documentation>Веб-сервис ФНС России - Предоставление сведений об ИНН физического лица на основании данных о ФИО и дате рождения. СМЭВ версия от 11.11.2011</wsdl:documentation>
+	<wsdl:types>
+		<xs:schema targetNamespace="http://ws.unisoft/">
+			<xs:import namespace="http://smev.gosuslugi.ru/rev111111" schemaLocation="smev_bridge.xsd"/>
+
+			<xs:element name="queryINNFLFIODR" type="smev:QueryType"/>
+			<xs:element name="queryINNFLFIODRResponse" type="smev:QueryResponseType"/>
+			<xs:element name="getINNFLFIODR" type="smev:GetType"/>
+			<xs:element name="getINNFLFIODRResponse" type="smev:GetResponseType"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="queryINNFLFIODR">
+		<wsdl:part name="Query_IN" element="tns:queryINNFLFIODR"/>
+	</wsdl:message>
+	<wsdl:message name="queryINNFLFIODRResponse">
+		<wsdl:part name="Query_OUT" element="tns:queryINNFLFIODRResponse"/>
+	</wsdl:message>
+	<wsdl:message name="getINNFLFIODR">
+		<wsdl:part name="Get_IN" element="tns:getINNFLFIODR"/>
+	</wsdl:message>
+	<wsdl:message name="getINNFLFIODRResponse">
+		<wsdl:part name="Get_OUT" element="tns:getINNFLFIODRResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="FNSINNFIODRSvc_24Port">
+		<wsdl:operation name="queryINNFLFIODR">
+			<wsdl:input message="tns:queryINNFLFIODR"/>
+			<wsdl:output message="tns:queryINNFLFIODRResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getINNFLFIODR">
+			<wsdl:input message="tns:getINNFLFIODR"/>
+			<wsdl:output message="tns:getINNFLFIODRResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="FNSINNFIODRSvcSoap11" type="tns:FNSINNFIODRSvc_24Port">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="queryINNFLFIODR">
+			<soap:operation soapAction="queryINNFLFIODR" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getINNFLFIODR">
+			<soap:operation soapAction="getINNFLFIODR" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="FNSINNFIODRSvc_24">
+		<wsdl:port name="FNSINNFIODRSvc_24Port" binding="tns:FNSINNFIODRSvcSoap11">
+			<soap:address location="http://193.124.34.202:18582/services/fns_inn_rd"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

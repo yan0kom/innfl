@@ -1,0 +1,15 @@
+# maven
+target/
+
+# eclipse
+.settings/
+.project
+.classpath
+.factorypath
+
+# idea
+.idea/
+*.iml
+
+# local settings
+config/

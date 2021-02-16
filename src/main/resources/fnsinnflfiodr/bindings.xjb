@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jxb:bindings version="2.1"
+    xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+    xmlns:namespace="http://jaxb2-commons.dev.java.net/namespace-prefix">
+
+    <jxb:globalBindings>
+        <xjc:simple/>
+    </jxb:globalBindings>
+
+    <jxb:bindings schemaLocation="smev/xop-include.xsd">
+        <jxb:schemaBindings>
+            <jxb:package name="ru.yan0kom.fnsinnflfiodr.include" />
+        </jxb:schemaBindings>
+        <namespace:prefix name="tns" namespaceURI="http://www.w3.org/2004/08/xop/include" />
+    </jxb:bindings>
+
+    <jxb:bindings schemaLocation="smev/v_2_4/smev.xsd">
+        <jxb:schemaBindings>
+            <jxb:package name="ru.yan0kom.fnsinnflfiodr" />
+        </jxb:schemaBindings>
+        <namespace:prefix name="smev" namespaceURI="http://smev.gosuslugi.ru/rev111111" />
+        <namespace:prefix name="ws" namespaceURI="http://ws.unisoft/" />
+    </jxb:bindings>
+
+    <jxb:bindings schemaLocation="WS_ZPINNFIODRID_2_085_05_04_01_01.xsd">
+        <jxb:schemaBindings>
+            <jxb:package name="ru.yan0kom.fnsinnflfiodr.query.rq" />
+        </jxb:schemaBindings>
+        <jxb:bindings node="//xs:element[@name='Документ']">
+            <jxb:class name="QueryRequestДокумент" />
+        </jxb:bindings>
+        <namespace:prefix name="tns" namespaceURI="http://ws.unisoft/INNFIODR/Query/Rq" />
+    </jxb:bindings>
+
+    <jxb:bindings schemaLocation="WS_OTINNFIODRID_2_085_06_04_01_01.xsd">
+        <jxb:schemaBindings>
+            <jxb:package name="ru.yan0kom.fnsinnflfiodr.query.rs" />
+        </jxb:schemaBindings>
+        <jxb:bindings node="//xs:element[@name='Документ']">
+            <jxb:class name="QueryResponseДокумент" />
+        </jxb:bindings>
+    </jxb:bindings>
+
+    <jxb:bindings schemaLocation="WS_ZPINNFIODRSV_2_085_07_04_01_01.xsd">
+        <jxb:schemaBindings>
+            <jxb:package name="ru.yan0kom.fnsinnflfiodr.get.rq" />
+        </jxb:schemaBindings>
+        <jxb:bindings node="//xs:element[@name='Документ']">
+            <jxb:class name="GetRequestДокумент" />
+        </jxb:bindings>
+        <namespace:prefix name="tns" namespaceURI="http://ws.unisoft/INNFIODR/Get/Rq" />
+    </jxb:bindings>
+
+    <jxb:bindings schemaLocation="WS_OTINNFIODRSV_2_085_08_04_01_01.xsd">
+        <jxb:schemaBindings>
+            <jxb:package name="ru.yan0kom.fnsinnflfiodr.get.rs" />
+        </jxb:schemaBindings>
+        <jxb:bindings node="//xs:element[@name='Документ']">
+            <jxb:class name="GetResponseДокумент" />
+        </jxb:bindings>
+    </jxb:bindings>
+
+</jxb:bindings>

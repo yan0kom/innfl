@@ -1,0 +1,12 @@
+.error {
+  text-align: center;
+  color: red;
+}
+
+.persons-frame-header {
+  margin: 5px;
+}
+
+.persons-frame-footer {
+  margin: 5px;
+}

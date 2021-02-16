@@ -1,0 +1,14 @@
+.persons-table {
+  border-collapse: collapse;
+  margin: 5px;
+}
+
+.persons-table, .persons-table-row, .persons-table-header-cell, .persons-table-cell{
+  border: 1px solid black;
+  text-align: center;
+  padding: 3px;
+}
+
+.full-name-cell {
+  text-align: left;
+}

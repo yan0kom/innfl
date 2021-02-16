@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/innfl
+    username: innfl
+    password: innfl_pass
+    initialization-mode: always
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate.ddl-auto: validate
+  mvc:
+    log-request-details: true
+fns-inn-fio-dr:
+  url: http://127.0.0.1:8089/inn
+  retry-get-on-52-delay: 5000 # 5 sec
