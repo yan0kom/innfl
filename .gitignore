@@ -12,4 +12,4 @@ target/
 *.iml
 
 # local settings
-config/
+/config/
